@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout – Footwear Hub</title>
+  <link rel="stylesheet" href="checkout.css">
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>💳 Checkout</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">My Bag 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Checkout Form -->
+  <section class="checkout">
+    <h2>Customer Details</h2>
+    <form id="checkout-form">
+      <label for="name">👤 Full Name</label>
+      <input type="text" id="name" placeholder="Name" required>
+
+      <label for="address">🏠 Address</label>
+      <textarea id="address" placeholder="Street, City, Country" required></textarea>
+
+      <label for="email">📧 Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label for="payment">💳 Payment Method</label>
+      <select id="payment" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="cash">Cash on Delivery</option>
+        <option value="card">Card</option>
+      </select>
+
+      <!-- Card details (hidden until card is selected) -->
+      <div id="card-details" class="hidden">
+        <label for="card-type">💳 Card Type</label>
+        <select id="card-type">
+          <option value="visa">HBL</option>
+          <option value="mastercard">ISLAMIC BANK</option>
+          <option value="amex">AL-HABIB BANK</option>
+        </select>
+
+        <label for="card-code">🔢 Card Number</label>
+        <input type="text" id="card-code" placeholder="1234-5678-9012" maxlength="19">
+      </div>
+
+      <button type="submit" class="btn-primary">✅ Confirm Order</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>💛 Thanks for shopping with Footwear Hub. Your story starts with every step.</p>
+  </footer>
+
+  <script>
+    // Show card details if "Card" is selected
+    const paymentSelect = document.getElementById("payment");
+    const cardDetails = document.getElementById("card-details");
+
+    paymentSelect.addEventListener("change", () => {
+      if (paymentSelect.value === "card") {
+        cardDetails.classList.remove("hidden");
+      } else {
+        cardDetails.classList.add("hidden");
+      }
+    });
+
+    // Handle form submission
+    const form = document.getElementById("checkout-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("🎉 Thank you for shopping with Footwear Hub! 💛 Your order has been confirmed.");
+      // Clear cart (if using localStorage)
+      localStorage.removeItem("cart");
+      // Redirect to home page
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

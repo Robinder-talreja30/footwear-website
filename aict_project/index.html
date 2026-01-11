@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MySite Footwear</title>
+
+<style>
+/* THEME COLORS  */
+:root{
+  --black:#0b0b0b;
+  --gold:#d4af37;
+  --soft-gold:#f5d76e;
+  --white:#ffffff;
+}
+
+/*  RESET  */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:var(--black);
+  color:var(--white);
+}
+
+/*  NAVBAR  */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  background:#000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  border-bottom:1px solid rgba(212,175,55,0.3);
+  z-index:9999;
+}
+
+.logo img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  object-fit:cover;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+}
+
+.nav-links li{
+  margin-left:25px;
+  position:relative;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+}
+
+/* underline hover */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:var(--gold);
+  transition:.3s;
+}
+.nav-links a:hover::after{width:100%;}
+
+/* DROPDOWN  */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#111;
+  min-width:170px;
+  border-radius:8px;
+  border:1px solid rgba(212,175,55,.4);
+}
+
+.dropdown-menu li{margin:0;}
+.dropdown-menu a{
+  display:block;
+  padding:12px 15px;
+}
+.dropdown-menu a:hover{
+  background:var(--gold);
+  color:#000;
+}
+.dropdown-menu.active{display:block;}
+
+/* AUTH */
+.auth-buttons{
+  display:flex;
+  gap:10px;
+}
+.login-btn{
+  padding:6px 16px;
+  border:1px solid var(--gold);
+  border-radius:20px;
+  color:var(--gold);
+}
+.login-btn:hover{
+  background:var(--gold);
+  color:#000;
+}
+.register-btn{
+  padding:6px 16px;
+  background:linear-gradient(135deg,var(--gold),var(--soft-gold));
+  border-radius:20px;
+  color:#000;
+  font-weight:bold;
+}
+
+/* MOBILE */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:var(--gold);
+  cursor:pointer;
+}
+
+/* SLIDER */
+.slider{
+  margin-top:70px;
+  height:85vh;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  height:100%;
+  transition:transform 1s ease-in-out;
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(70%);
+}
+
+/* OFFER TEXT */
+.slide-text{
+  position:absolute;
+  top:32%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:52px;
+  font-weight:900;
+  color:var(--gold);
+  letter-spacing:3px;
+  text-shadow:0 15px 40px rgba(0,0,0,.9);
+}
+
+.slide-sub{
+  position:absolute;
+  top:42%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:18px;
+  letter-spacing:2px;
+}
+
+/* BUTTON */
+.slide-btn{
+  position:absolute;
+  top:55%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:15px 45px;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--gold),var(--soft-gold));
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow:0 8px 25px rgba(212,175,55,.6);
+}
+
+.slide-btn:hover{
+  transform:translate(-50%,-50%) scale(1.05);
+}
+
+/* FOOTER */
+.footer{
+  background:#070707;
+  padding:60px 20px 20px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.footer-box{
+  flex:1 1 250px;
+  margin:15px;
+}
+
+.footer-box h3{
+  color:var(--gold);
+  margin-bottom:15px;
+}
+
+.footer-box p,
+.footer-box a{
+  color:#ccc;
+  font-size:14px;
+  text-decoration:none;
+  display:block;
+  margin-bottom:8px;
+}
+
+.footer-box a:hover{color:var(--soft-gold);}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  border-top:1px solid #333;
+  padding-top:15px;
+  font-size:13px;
+  color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:240px;
+    background:#000;
+    flex-direction:column;
+    display:none;
+  }
+  .nav-links.active{display:flex;}
+  .nav-links li{margin:15px 0;}
+
+  .slide-text{font-size:34px;}
+  .slide-sub{font-size:14px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="nlogo.jpg">
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+      <a href="#" id="productsBtn">Products ▾</a>
+      <ul class="dropdown-menu" id="productsMenu">
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="children.html">Kids</a></li>
+      </ul>
+    </li>
+
+    <li><a href="ABOUT.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
+
+    <li class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </li>
+  </ul>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+<!-- SLIDER -->
+<div class="slider">
+  <div class="slides" id="slides">
+
+    <div class="slide">
+      <img src="mimg.jpg">
+      <div class="slide-text">FLAT 30% OFF</div>
+      <div class="slide-sub">Men Collection</div>
+      <a href="men.html" class="slide-btn">SHOP MEN</a>
+    </div>
+
+    <div class="slide">
+      <img src="wimg.jpg">
+      <div class="slide-text">FLAT 30% OFF</div>
+      <div class="slide-sub">Women Collection</div>
+      <a href="women.html" class="slide-btn">SHOP WOMEN</a>
+    </div>
+
+    <div class="slide">
+      <img src="cimg.jpg">
+      <div class="slide-text">FLAT 30% OFF</div>
+      <div class="slide-sub">Kids Collection</div>
+      <a href="children.html" class="slide-btn">SHOP KIDS</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>MySite Footwear</h3>
+      <p>Luxury footwear for men, women & kids.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>📍 Pakistan</p>
+      <p>📞 +92 333 1100234</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 MySite Footwear. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+// MOBILE MENU
+menuToggle.onclick = ()=>{
+  navLinks.classList.toggle("active");
+};
+
+// DROPDOWN HOLD
+productsBtn.onclick = (e)=>{
+  e.preventDefault();
+  productsMenu.classList.toggle("active");
+};
+
+// SLIDER
+const slides = document.getElementById("slides");
+let index = 0;
+setInterval(()=>{
+  index = (index + 1) % slides.children.length;
+  slides.style.transform = `translateX(-${index*100}%)`;
+},5000);
+</script>
+
+</body>
+</html>

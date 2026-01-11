@@ -1,0 +1,310 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #000;
+    color: #f5c518;
+  }
+  
+  header {
+    background: #111;
+    color: #f5c518;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f5c518;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #f5c518;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #000, #222);
+  }
+  
+  .products {
+    padding: 40px 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: #888; /* optional: makes it look faded */
+    margin-right: 8px;
+  }
+  .product {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(245,197,24,0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 20px;
+  }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .cart-img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .remove-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .discount-sticker {
+    background: #f5c518;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background: #f5c518;
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background: #fff;
+    color: #000;
+  }
+  
+  footer {
+    background: #111;
+    color: #f5c518;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #f5c518;
+  }
+  
+body{
+  padding-top:70px; /* space for fixed navbar */
+  background:#0b0b0b;
+  color:#fff;
+  font-family:"Segoe UI", Arial, sans-serif;
+}
+
+/* ===== HERO HEADER ===== */
+.hero-header{
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("men-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  padding:120px 20px 80px;
+  text-align:center;
+}
+
+.hero-header h1{
+  color:#d4af37;
+  font-size:48px;
+  margin-bottom:15px;
+  text-shadow:0 0 15px rgba(212,175,55,0.6);
+}
+
+.hero-header p{
+  color:#ddd;
+  font-size:18px;
+}
+
+/* ===== PRODUCTS SECTION ===== */
+.products{
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.products h2{
+  color:#d4af37;
+  margin-bottom:20px;
+  font-size:32px;
+  border-left:5px solid #d4af37;
+  padding-left:12px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:25px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product{
+  background:#111;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,0.2);
+  box-shadow:0 8px 20px rgba(212,175,55,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover{
+  transform:translateY(-7px);
+  box-shadow:0 12px 25px rgba(212,175,55,0.4);
+}
+
+.product img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:12px;
+  transition: transform 0.3s;
+}
+
+.product:hover img{
+  transform:scale(1.05);
+}
+
+.product h3{
+  color:#f5d76e;
+  margin-bottom:6px;
+}
+
+.product .tagline{
+  color:#ccc;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.price{
+  margin-bottom:12px;
+}
+
+.old-price{
+  text-decoration:line-through;
+  color:#888;
+  margin-right:8px;
+}
+
+.new-price{
+  font-weight:bold;
+  color:#d4af37;
+}
+
+.discount-sticker{
+  position:absolute;
+  top:12px;
+  right:12px;
+  background:#d4af37;
+  color:#000;
+  font-weight:bold;
+  padding:6px 12px;
+  border-radius:20px;
+}
+
+.stock-msg{
+  font-size:13px;
+  color:#ccc;
+  margin-bottom:10px;
+}
+
+.btn-primary{
+  background:#d4af37;
+  color:#000;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn-primary:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#070707;
+  color:#aaa;
+  text-align:center;
+  padding:20px;
+  margin-top:60px;
+  border-top:1px solid #333;
+}
+
+footer a{
+  color:#ccc;
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:#f5d76e;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-header h1{
+    font-size:36px;
+  }
+  .hero-header p{
+    font-size:16px;
+  }
+  .product-grid{
+    gap:15px;
+  }
+}

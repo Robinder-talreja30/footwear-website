@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women's Collection - MySite Footwear</title>
+<link rel="stylesheet" href="NAV+F.CSS">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<!--  NAVBAR  -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="nlogo.jpg" alt="Logo">
+  </div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+      <a href="#" id="productsBtn">Products ▾</a>
+      <ul class="dropdown-menu" id="productsMenu">
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="children.html">Kids</a></li>
+      </ul>
+    </li>
+
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
+
+    <li class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </li>
+  </ul>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+<!--  MAIN PRODUCTS SECTION  -->
+<section class="products" style="padding-top:100px;">
+  <h2>Women's Collection</h2>
+  <p class="section-tagline">Step out in style, comfort, and elegance.</p>
+
+  <div class="product-grid">
+
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="images/women1.webp" alt="Elegant Heels">
+      <h3>Elegant Heels</h3>
+      <p class="tagline">Chic design for every occasion</p>
+      <p class="price"><span class="old-price">$120</span> $95</p>
+      <span class="discount-sticker">20% OFF ✨</span>
+
+      <label for="size1">Size:</label>
+      <select id="size1">
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <button onclick="addToCart('Elegant Heels', 95, 'images/women1.webp', document.getElementById('size1').value)" class="btn-primary">👠 Add to Bag</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+      <img src="images/women2.webp" alt="Casual Flats">
+      <h3>Casual Flats</h3>
+      <p class="tagline">Comfortable everyday wear</p>
+      <p class="price"><span class="old-price">$80</span> $60</p>
+      <span class="discount-sticker">Save $20 💛</span>
+
+      <label for="size2">Size:</label>
+      <select id="size2">
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <button onclick="addToCart('Casual Flats', 60, 'images/women2.webp', document.getElementById('size2').value)" class="btn-primary">👡 Add to Bag</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+      <img src="images/women3.webp" alt="Sneakers">
+      <h3>Sporty Sneakers</h3>
+      <p class="tagline">Active style & support</p>
+      <p class="price"><span class="old-price">$100</span> $80</p>
+      <span class="discount-sticker">20% OFF 🔥</span>
+
+      <label for="size3">Size:</label>
+      <select id="size3">
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <button onclick="addToCart('Sporty Sneakers', 80, 'images/women3.webp', document.getElementById('size3').value)" class="btn-primary">👟 Add to Bag</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+      <img src="images/women4.webp" alt="Ankle Boots">
+      <h3>Ankle Boots</h3>
+      <p class="tagline">Trendy boots for daily wear</p>
+      <p class="price"><span class="old-price">$130</span> $105</p>
+      <span class="discount-sticker">Save $25 ✨</span>
+
+      <label for="size4">Size:</label>
+      <select id="size4">
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <button onclick="addToCart('Ankle Boots', 105, 'images/women4.webp', document.getElementById('size4').value)" class="btn-primary">👢 Add to Bag</button>
+    </div>
+
+  </div>
+</section>
+
+<!--  FOOTER  -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>MySite Footwear</h3>
+      <p>Luxury footwear for men, women & kids.</p>
+    </div>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>📍 Pakistan</p>
+      <p>📞 +92 333 1100234</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 MySite Footwear. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="NAV.JS"></script>
+<script src="script2.js"></script>
+</body>
+</html>

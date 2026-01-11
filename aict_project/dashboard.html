@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Welcome | MySite Footwear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0b0b0b;
+  font-family:Segoe UI, Arial, sans-serif;
+  color:#fff;
+}
+
+.box{
+  background:#111;
+  padding:45px;
+  border-radius:18px;
+  border:1px solid #d4af37;
+  text-align:center;
+  box-shadow:0 25px 50px rgba(0,0,0,0.8);
+  max-width:420px;
+  width:90%;
+}
+
+h1{
+  color:#d4af37;
+  margin-bottom:10px;
+}
+
+p{
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+button{
+  padding:14px 35px;
+  background:linear-gradient(135deg,#d4af37,#f5d76e);
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1 id="welcome"></h1>
+  <p>You are successfully logged in</p>
+
+  <button onclick="goHome()">Continue Shopping</button>
+</div>
+
+<script>
+let user = JSON.parse(localStorage.getItem("currentUser"));
+
+if(!user){
+  window.location.href = "login.html";
+}
+
+document.getElementById("welcome").innerText =
+  "Welcome " + user.name;
+
+function goHome(){
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

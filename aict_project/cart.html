@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="NAV+F.CSS">
+    <link rel="stylesheet" href="style2.css">
+
+    <style>
+        body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #000;
+    color: #f5c518;
+    padding-top: 80px; /* Add space so content starts below fixed navbar */
+}
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="nlogo.jpg" alt="Logo">
+        </div>
+      
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+      
+          <li>
+            <a href="#" id="productsBtn">Products ▾</a>
+            <ul class="dropdown-menu" id="productsMenu">
+              <li><a href="men.html">Men</a></li>
+              <li><a href="women.html">Women</a></li>
+              <li><a href="children.html">Kids</a></li>
+            </ul>
+          </li>
+      
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+      
+          <li class="auth-buttons">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="register-btn">Register</a>
+          </li>
+        </ul>
+      
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </nav>
+
+  <!-- Cart Section -->
+  <section class="cart">
+    <h2>Here’s what you picked 👟</h2>
+    <ul id="cart-items"></ul>
+    <p id="total">Total: $0</p>
+    <p class="cart-note">✨ Great choices! You’re just a step away from making them yours.</p>
+
+    <!-- Clear Cart button -->
+    <button id="clear-cart" class="btn-primary">🗑️ Clear Cart</button>
+
+    <!-- Checkout button (link styled as button) -->
+    <a href="checkout.html" class="btn-primary">✅ Checkout</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>💛 Thanks for shopping with Footwear Hub. Your story starts with every step.</p>
+  </footer>
+
+  
+  <!-- Shared JS -->
+  <script src="script2.js"></script>
+  <Script src="NAV.JS"></Script>
+</body>
+</html>
