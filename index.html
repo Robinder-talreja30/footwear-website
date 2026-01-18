@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MySite Footwear</title>
+  <link rel="stylesheet" href="NAV+F.CSS">
 
 <style>
-/* THEME COLORS  */
+/* THEME COLORS */
 :root{
   --black:#0b0b0b;
   --gold:#d4af37;
@@ -14,7 +15,7 @@
   --white:#ffffff;
 }
 
-/*  RESET  */
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -25,113 +26,6 @@
 body{
   background:var(--black);
   color:var(--white);
-}
-
-/*  NAVBAR  */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  background:#000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 40px;
-  border-bottom:1px solid rgba(212,175,55,0.3);
-  z-index:9999;
-}
-
-.logo img{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  border:2px solid var(--gold);
-  object-fit:cover;
-}
-
-.nav-links{
-  list-style:none;
-  display:flex;
-  align-items:center;
-}
-
-.nav-links li{
-  margin-left:25px;
-  position:relative;
-}
-
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:16px;
-}
-
-/* underline hover */
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0%;
-  height:2px;
-  background:var(--gold);
-  transition:.3s;
-}
-.nav-links a:hover::after{width:100%;}
-
-/* DROPDOWN  */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#111;
-  min-width:170px;
-  border-radius:8px;
-  border:1px solid rgba(212,175,55,.4);
-}
-
-.dropdown-menu li{margin:0;}
-.dropdown-menu a{
-  display:block;
-  padding:12px 15px;
-}
-.dropdown-menu a:hover{
-  background:var(--gold);
-  color:#000;
-}
-.dropdown-menu.active{display:block;}
-
-/* AUTH */
-.auth-buttons{
-  display:flex;
-  gap:10px;
-}
-.login-btn{
-  padding:6px 16px;
-  border:1px solid var(--gold);
-  border-radius:20px;
-  color:var(--gold);
-}
-.login-btn:hover{
-  background:var(--gold);
-  color:#000;
-}
-.register-btn{
-  padding:6px 16px;
-  background:linear-gradient(135deg,var(--gold),var(--soft-gold));
-  border-radius:20px;
-  color:#000;
-  font-weight:bold;
-}
-
-/* MOBILE */
-.menu-toggle{
-  display:none;
-  font-size:28px;
-  color:var(--gold);
-  cursor:pointer;
 }
 
 /* SLIDER */
@@ -159,7 +53,7 @@ body{
   filter:brightness(70%);
 }
 
-/* OFFER TEXT */
+/* SLIDER TEXT */
 .slide-text{
   position:absolute;
   top:32%;
@@ -203,66 +97,8 @@ body{
   transform:translate(-50%,-50%) scale(1.05);
 }
 
-/* FOOTER */
-.footer{
-  background:#070707;
-  padding:60px 20px 20px;
-}
-
-.footer-container{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-}
-
-.footer-box{
-  flex:1 1 250px;
-  margin:15px;
-}
-
-.footer-box h3{
-  color:var(--gold);
-  margin-bottom:15px;
-}
-
-.footer-box p,
-.footer-box a{
-  color:#ccc;
-  font-size:14px;
-  text-decoration:none;
-  display:block;
-  margin-bottom:8px;
-}
-
-.footer-box a:hover{color:var(--soft-gold);}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:30px;
-  border-top:1px solid #333;
-  padding-top:15px;
-  font-size:13px;
-  color:#aaa;
-}
-
 /* RESPONSIVE */
 @media(max-width:768px){
-  .menu-toggle{display:block;}
-
-  .nav-links{
-    position:absolute;
-    top:70px;
-    right:0;
-    width:240px;
-    background:#000;
-    flex-direction:column;
-    display:none;
-  }
-  .nav-links.active{display:flex;}
-  .nav-links li{margin:15px 0;}
-
   .slide-text{font-size:34px;}
   .slide-sub{font-size:14px;}
 }
